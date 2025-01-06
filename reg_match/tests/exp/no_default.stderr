@@ -1,0 +1,12 @@
+error: proc macro panicked
+ --> tests/exp/no_default.rs:5:13
+  |
+5 |       let a = reg_match!(e {
+  |  _____________^
+6 | |         "4" => "4".to_string(),
+7 | |         r"(?<b>\d+(?<c>.+))" => format!("{}-{}", b, c),
+8 | |         //_=>"a".to_string()
+9 | |     });
+  | |______^
+  |
+  = help: message: should always has a default branch.

@@ -1,0 +1,12 @@
+[package]
+name = "reg_match"
+description = "A match style regex tool."
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+regex = { workspace = true }
+reg_match_macro = { path = "../reg_match_macro" }
+
+[dev-dependencies]
+trybuild = "1.0.101"

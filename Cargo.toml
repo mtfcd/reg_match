@@ -1,0 +1,9 @@
+[workspace]
+members = [ "reg_match","reg_match_macro"]
+
+[workspace.dependencies]
+regex = "1.11"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
