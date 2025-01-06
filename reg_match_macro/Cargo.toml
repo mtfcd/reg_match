@@ -1,5 +1,6 @@
 [package]
 name = "reg_match_macro"
+description = "Helper crate for reg_match"
 version.workspace = true
 edition.workspace = true
 repository.workspace = true
