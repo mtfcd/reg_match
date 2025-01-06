@@ -11,7 +11,7 @@ license-file.workspace = true
 
 [dependencies]
 regex = { workspace = true }
-reg_match_macro = { path = "../reg_match_macro" }
+reg_match_macro = { path = "../reg_match_macro" ,version = "=0.1.0" }
 
 [dev-dependencies]
 trybuild = "1.0.101"
