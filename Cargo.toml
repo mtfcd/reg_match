@@ -7,3 +7,9 @@ regex = "1.11"
 [workspace.package]
 version = "0.1.0"
 edition = "2021"
+license-file = "./LICENSE"
+description = "A match style regex tool."
+repository = "https://github.com/mtfcd/reg_match"
+readme = "./readme.md"
+categories = ["text-processing"]
+keywords = ["regex", "macro", "match", "reg_match"]
