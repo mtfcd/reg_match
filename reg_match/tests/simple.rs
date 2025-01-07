@@ -48,3 +48,43 @@ fn no_default_arm() {
     let t = trybuild::TestCases::new();
     t.compile_fail("tests/exp/no_default.rs");
 }
+
+#[derive(PartialEq, Debug)]
+struct Email {
+    username: String,
+    domain: String,
+}
+
+#[derive(PartialEq, Debug)]
+enum Account {
+    Phone(String),
+    Email(Email),
+    Invalid,
+}
+
+fn match_account(input: &str) -> Account {
+    reg_match!(input {
+        r"(?<name>.+)@(?<domain>.+)" => Account::Email(Email{username: name.to_string(), domain: domain.to_string()}),
+        r"(?<phone>\d{6,11})" => Account::Phone(phone.to_string()),
+        _ => Account::Invalid
+    })
+}
+
+#[test]
+fn match_enum() {
+    assert_eq!(
+        Account::Email(Email {
+            username: "abc".to_string(),
+            domain: "email.com".to_string()
+        }),
+        match_account("abc@email.com")
+    );
+    assert_eq!(
+        Account::Phone("66668888".to_string()),
+        match_account("66668888")
+    );
+    assert_eq!(
+        Account::Invalid,
+        match_account("abc123")
+    );
+}
